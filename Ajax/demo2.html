@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>time : <span id='time'></span></p>
+    <select id='timezone'>
+        <option value='Asia/Seoul'>asia/seoul</option>
+        <option value='America/New_York'>America/New_York</option>
+    </select>
+    <select id='format'>
+        <option value='Y-m-d H:i:s'>Y-m-d H:i:s</option>
+        <option value='Y-m-d'>Y-m-d</option>
+    </select>
+    <input type='button' id='execute' value='execute' />
+    <!-- execute를 누르게 되면 timezone과 format의 정보를 ajax를 통해서 서버로 전송하고
+    그 서버에서 응답한 결과를 id값이 time인 element에 하위로 낑겨넣게 되는 예제.-->
+    <script>
+    document.querySelector('input').addEventListener('click', function(event) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', './time2.php'); // 이번엔 POST방식으로 전달.
+        xhr.onreadystatechange = function() {
+                document.querySelector('#time').innerHTML = xhr.responseText;
+            }
+        var data = ''; // 전송할 데이터를 만드는 과정
+        data += 'timezone='+document.getElementById('timezone').value; // 현재 선택된 option의 value값이 들어오게 됨
+        data += '&format='+document.getElementById('format').value; // format의 선택된 option의 value값이 들어오게 됨 
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // 데이터를 전송하기 전에, setRequestHeader를 통해 전송하는 content-type application/x-www-form-urleocnded 로 적용해야한다.
+        // 이렇게 지정하게되면 우리가 전송하는 정보가 마치 HTML의 form을 통해 전송하는 정보인 것처럼 서버는 인식할 수 있다.
+        xhr.send(data);
+    });
+    </script>
+</body>
+</html>
+
+<!-- timezone = Asia/Seoul&format=Y-m-d
+값의 이름 = 값의 내용 -->
+
+<!-- POST 방식이다. from 생활코딩-->
