@@ -2,7 +2,7 @@ $(function() {
     $('#listButton').click(function() {
         $.ajax({
             type: "POST",
-            urk: "/list.html",
+            url: "/list.html",
             dataType : "html",
             success: function(data) {
                 $('#listDiv').html(data);
