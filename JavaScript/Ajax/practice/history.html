@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>History API</title>
+</head>
+<body>
+<div id="state"></div>
+<button id="pushState">pushState</button>
+<button id="replaceState">replaceState</button>
+<script>
+  document.querySelector('#pushState').addEventListener('click', function () {
+    history.pushState({ data: 'pushpush' }, 'title을 pushState로', '/pushpush')
+  });
+  document.querySelector('#replaceState').addEventListener('click', function () {
+    history.replaceState({ data: 'replace' }, 'title을 replaceState로', '/replace');
+  });
+  window.addEventListener('popstate', function () {
+    console.log('popstate', history.state);
+    document.querySelector('#state').innerHTML = JSON.stringify(history.state);
+  });
+</script>
+</body>
+</html>
