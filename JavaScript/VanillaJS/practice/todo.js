@@ -15,7 +15,6 @@ function deleteToDo(event) {
         // 모든 toDos가 li의 id와 같지 않을 때
         // filter는 array의 모든 아이템을 통해 함수를 실행하고
         // true인 아이템들만 갖고 새로운 array를 만든다.
-
         // li의 id가 string 형식이기때문에 parseInt를 통해 정수형으로 바꿔줌
     });
     toDos = cleanToDos;
