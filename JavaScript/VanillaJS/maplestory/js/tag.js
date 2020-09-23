@@ -8,7 +8,6 @@ var taskSubmit = document.getElementById('btn_add_task');
 var taskBox = document.getElementById('text_task');
 var taskList = document.getElementById('list_tasks');
 
-
 document.addEventListener('keydown', function(e) {
     var task = taskBox.value.trim();
     var newLI = document.createElement('li');
@@ -29,7 +28,6 @@ document.addEventListener('click', function(e) {
     var task = taskBox.value.trim();
     var newLI = document.createElement('li');
     var removeBtn = document.createElement('button');
-    removeBtn.innerHTML = "❌";
     var element = newLI.appendChild(document.createTextNode(task));
     if ((taskBox.value != "") && (e.keyCode === 188 || e.keyCode === 13 || e.keyCode === 32))  {
         e.preventDefault();
