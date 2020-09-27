@@ -133,7 +133,13 @@ ReactDOM.render(
 <b>주의 : 컴포넌트의 이름은 항상 대문자로 시작한다.</b>
 
 React는 소문자로 시작하는 컴포넌트를 DOM 태그로 처리한다.
-예를 들어 ```html<div />```는 HTML div 태그를 나타내지만, ```html<Welcome />```은 컴포넌트를 나타내며 범위 안에 ```Welcome```이 있어야 한다.
+예를 들어
+```html
+<div />
+```는 HTML div 태그를 나타내지만,
+```html
+<Welcome />
+```은 컴포넌트를 나타내며 범위 안에 ```Welcome```이 있어야 한다.
 
 
 ### 컴포넌트 합성
