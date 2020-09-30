@@ -17,3 +17,13 @@ ul {
     background-color: blue;
     list-style: none;
 }
+.ui-menu {
+    display: block;
+}
+.ui-menu .ui-menu-item {
+    
+}
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
