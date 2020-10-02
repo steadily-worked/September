@@ -27,7 +27,7 @@ ul {
     z-index: 0;
     display: none;
     float: left;
-    min-width: 160px;
+    width: 160px;
     padding: 5px 0;
     margin: 2px 0 0;
     list-style: none;

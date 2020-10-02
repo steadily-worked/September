@@ -16,6 +16,7 @@ function removeSpecial (e) {
 
 /* keyup */
 document.addEventListener('keyup', keyupFunction, false);
+taskSubmit.addEventListener('click', keyupFunction, false);
 function keyupFunction(e) {
     var keyCode = e.keyCode;
     var task = taskBox.value.trim();
